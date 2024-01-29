@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
-
+import Image from "next/image";
+import temp from "../../public/temp.jpeg"
 
 const Hero = () => {
   return (
@@ -21,7 +22,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div>right</div>
+        <div className="flex justify-center items-center">
+          <Image src={temp} alt="img"/>
+        </div>
       </div>
     </div>
   );

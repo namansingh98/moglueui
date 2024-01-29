@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
-import { Togglebtn } from "./toggle-btn";
+import { Togglebtn } from "./Toggle-btn";
 import Link from "next/link";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
