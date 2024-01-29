@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { BackgroundBeams } from "./ui/Background-beams";
 import { SparklesPreview } from "./Sparkles-Main";
+import Facilities from "./Facilities";
 
 const words = `Let me introduce the new app that connects strangers via video /
 chat`;
@@ -37,6 +38,10 @@ const Hero = () => {
 {/* <SparklesPreview /> */}  
 {/* additional hero main code if current is not suitable  */}
 
+
+{/* Facilities stated */}
+
+<Facilities/>
 
 </>
   );
