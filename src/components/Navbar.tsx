@@ -14,19 +14,21 @@ const Navbar = () => {
   ];
   return (
     <>
-      <header className="sm:px-8 px-4 py-2 z-10 w-full">
+      <header className="sm:px-8 px-4 py-2 z-10 w-full fixed bg-transparent ">
         <nav className="flex justify-between items-center max-container">
-          <a href="/" className="text-3xl font-bold">
+          <Link href="/" className="text-3xl font-bold">
             Logo
-          </a>
+          </Link>
           <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
             {navLinks.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className=" leading-normal text-lg text-slate-gray"
+                  className=" leading-normal text-lg  group relative dark:text-white/[0.7] dark:hover:text-white transition-colors duration-300"
                 >
                   {item.label}
+
+                  <span className="absolute inset-x-0 bottom-0 h-1 dark:bg-white origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </Link>
               </li>
             ))}
@@ -35,9 +37,9 @@ const Navbar = () => {
             <Togglebtn />
           </div>
           <div className="flex gap-2 text-lg leading-normal font-medium font-montserrat max-lg:hidden wide:mr-24">
-            <a href="/">Sign in</a>
+            <Link href="/">Sign in</Link>
             <span>/</span>
-            <a href="/">Explore now</a>
+            <Link href="/">Explore now</Link>
           </div>
 
           <div
