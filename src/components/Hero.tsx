@@ -21,7 +21,7 @@ const Hero = () => {
             </div>
             <div className="flex gap-2 items-center justify-center p-5">
               <div className="flex gap-2 items-center justify-center">
-                <Button variant={"outline"}>Let&apos;s Connect</Button>
+                <Button variant={"outline" }>Let&apos;s Connect</Button>
                 -/
                 <Button variant={"link"}>Know more</Button>
               </div>
