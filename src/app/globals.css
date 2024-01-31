@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    scrollbar-height: none;
+  }
+  .hide-scroll {
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+  
+  }

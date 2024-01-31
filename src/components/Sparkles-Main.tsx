@@ -4,7 +4,7 @@ import SparklesCore from "@/components/ui/Sparkles"
 
 export function SparklesPreview() {
   return (
-    <div className="h-[40rem] w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[40rem] w-full dark:bg-black flex flex-col items-center justify-center overflow-hidden rounded-md ">
       <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center dark:text-white relative z-20">
          Moglu
       </h1>
