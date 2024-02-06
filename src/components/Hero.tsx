@@ -8,6 +8,7 @@ import { SparklesPreview } from "./Sparkles-Main";
 import Facilities from "./Facilities";
 
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import { StickyScrollReveal } from "./StickyScrollReveal";
 const words = `Let me introduce the new app that connects strangers via video /
 chat`;
 
@@ -50,6 +51,9 @@ const Hero = () => {
 
       </TracingBeam>
       {/* Facilities ends */}
+      <StickyScrollReveal/>
+
+      
     </>
   );
 };

@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/utils/theme-provider";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   subsets: ["devanagari"],
@@ -30,7 +31,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+
           {children}
+<Footer/>
         </ThemeProvider>
       </body>
     </html>
