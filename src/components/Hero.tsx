@@ -9,6 +9,7 @@ import Facilities from "./Facilities";
 
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { StickyScrollReveal } from "./StickyScrollReveal";
+import Link from "next/link";
 const words = `Let me introduce the new app that connects strangers via video /
 chat`;
 
@@ -29,10 +30,12 @@ const Hero = () => {
             </div>
             <div className="flex gap-2 items-center justify-center p-5">
               <div className="flex gap-2 items-center justify-center">
-                <Button variant={"outline"}>Let&apos;s Connect</Button>
+              <Link href={"/chat"} className="cursor-pointer z-20">
+                 Let&apos;s Connect
+                  </Link>
               
                 -/
-                <Button variant={"link"}>Know more</Button>
+                <Button variant={"link"} className="z-10">Know more</Button>
               </div>
             </div>
           </div>
