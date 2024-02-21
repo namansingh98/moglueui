@@ -15,7 +15,9 @@ import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { Switch } from "@/components/ui/switch";
 export function Togglebtn() {
   const { setTheme } = useTheme();
-
+const switchHandler =()=>{
+  !setTheme("dark")} ? ("light") : ("system")
+}
   return (
     // <DropdownMenu>
     //   <DropdownMenuTrigger asChild>
@@ -43,7 +45,7 @@ export function Togglebtn() {
       </label>
       <switch
         id="dark"
-        onClick={() => setTheme("dark")}
+        onClick={() => switchHandler()
         className="w-10 h-6 rounded-full bg-gray-300"
       />
 
