@@ -1,3 +1,6 @@
+"use-client"
+
+
 export function Togglebtn() {
   const { theme, setTheme } = useTheme();
 
