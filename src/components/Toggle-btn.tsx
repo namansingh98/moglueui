@@ -15,10 +15,10 @@ import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 import { Switch } from "@/components/ui/switch";
 export function Togglebtn() {
-  const { setTheme } = useTheme();
-const switchHandler =()=>{
-  !setTheme("dark")} ? ("light") : ("system")
-}
+  const { theme, setTheme } = useTheme();
+  const switchHandler = () => {
+    setTheme(theme === "dark" ? "light" : "system");
+  };
   return (
     // <DropdownMenu>
     //   <DropdownMenuTrigger asChild>
@@ -41,18 +41,18 @@ const switchHandler =()=>{
     //   </DropdownMenuContent>
     // </DropdownMenu>
     <div className="flex items-center space-x-2">
-      <label>
-        <IoMoonOutline />
-      </label>
-      <switch
-        id="dark"
-        onClick={() => switchHandler()
-        className="w-10 h-6 rounded-full bg-gray-300"
-      />
+    <label>
+      <IoMoonOutline />
+    </label>
+    <switch
+      id="dark"
+      onClick={() => switchHandler()}
+      className={"w-10 h-6 rounded-full bg-gray-300"}
+    />
 
-      <label>
-        <IoSunnyOutline />
-      </label>
-    </div>
-  );
+    <label>
+      <IoSunnyOutline />
+    </label>
+  </div>
+);
 }

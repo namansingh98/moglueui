@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+// Import necessary modules and components
+import "./globals.css";
+import type { AppProps } from "next/app";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/app/utils/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from '@/utils/theme-provider';
 
 const poppins = Poppins({
   subsets: ["devanagari"],
@@ -11,19 +13,12 @@ const poppins = Poppins({
 });
 
 
-export const metadata: Metadata = {
-  title: "Maglu",
-  description: "App for connect stranger through Video / Chat",
-};
+// App component
+function MyApp({ Component, pageProps }: AppProps) {
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={poppins.className}>
+    <>
+      <div className={poppins.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -32,10 +27,19 @@ export default function RootLayout({
         >
           <Navbar />
 
-          {children}
-<Footer/>
+
+
+          <Component {...pageProps} />
+
+
+
+          <Footer />
         </ThemeProvider>
-      </body>
-    </html>
+      </div>
+
+    </>
   );
 }
+
+export default MyApp;
+
