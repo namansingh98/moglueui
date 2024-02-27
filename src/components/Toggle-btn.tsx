@@ -1,58 +1,70 @@
+// Import necessary dependencies
+import * as React from "react"
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import { useTheme } from "next-themes"
 
-"use client";
+// ModeToggle component
+export function ModeToggle(): JSX.Element  {
+  // Get the setTheme function from useTheme hook
+  const { theme, setTheme } = useTheme()
 
-import * as React from "react";
-import { useTheme } from "next-themes";
-import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
+  // Function to toggle theme
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+  }
 
-// import { Button } from "@/components/ui/button"
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu"
-
-import { Switch } from "@/components/ui/switch";
-export function Togglebtn() {
-  const { theme, setTheme } = useTheme();
-  const switchHandler = () => {
-    setTheme(theme === "dark" ? "light" : "system");
-  };
   return (
-    // <DropdownMenu>
-    //   <DropdownMenuTrigger asChild>
-    //     <Button variant="ghost" size="icon">
-    //       <IoSunnyOutline className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-    //       <IoMoonOutline className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-    //       <span className="sr-only">Toggle theme</span>
-    //     </Button>
-    //   </DropdownMenuTrigger>
-    //   <DropdownMenuContent align="end">
-    //     <DropdownMenuItem onClick={() => setTheme("light")}>
-    //       Light
-    //     </DropdownMenuItem>
-    //     <DropdownMenuItem onClick={() => setTheme("dark")}>
-    //       Dark
-    //     </DropdownMenuItem>
-    //     <DropdownMenuItem onClick={() => setTheme("system")}>
-    //       System
-    //     </DropdownMenuItem>
-    //   </DropdownMenuContent>
-    // </DropdownMenu>
-    <div className="flex items-center space-x-2">
-    <label>
-      <IoMoonOutline />
-    </label>
-    <switch
-      id="dark"
-      onClick={() => switchHandler()}
-      className={"w-10 h-6 rounded-full bg-gray-300"}
-    />
-
-    <label>
-      <IoSunnyOutline />
-    </label>
-  </div>
-);
+    <button
+      className="flex items-center gap-1 p-2 rounded-full bg-gray-200 dark:bg-gray-800"
+      onClick={toggleTheme}
+    >
+      {theme === "light" ? (
+        <>
+          <SunIcon className="h-6 w-6 text-yellow-500" />
+          <span className="sr-only">Switch to Dark Mode</span>
+        </>
+      ) : (
+        <>
+          <MoonIcon className="h-6 w-6 text-gray-700" />
+          <span className="sr-only">Switch to Light Mode</span>
+        </>
+      )}
+    </button>
+  )
 }
+
+<!-- // Import necessary dependencies
+import * as React from "react"
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import { useTheme } from "next-themes"
+
+// ModeToggle component
+export function ModeToggle(): JSX.Element {
+  // Get the setTheme function from useTheme hook
+  const { theme, setTheme } = useTheme()
+
+  // Function to toggle theme
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+  }
+
+  return (
+    <button
+      className="flex items-center gap-1 p-2 rounded-full bg-gray-200 dark:bg-gray-800"
+      onClick={toggleTheme}
+    >
+      {theme === "light" ? (
+        <>
+          <SunIcon className="h-6 w-6 text-yellow-500" />
+          <span className="sr-only">Switch to Dark Mode</span>
+        </>
+      ) : (
+        <>
+          <MoonIcon className="h-6 w-6 text-gray-700" />
+          <span className="sr-only">Switch to Light Mode</span>
+        </>
+      )}
+    </button>
+  )
+}
+ -->
