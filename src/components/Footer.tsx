@@ -3,8 +3,8 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <div className="w-full flex items-center justify-center bg-black">
-        <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
+      <div className="w-full flex items-center justify-center ">
+        <div className="md:w-2/3 w-full px-4 dark:text-white flex flex-col">
           <div className="flex flex-col">
             <div className="flex mt-24 mb-12 flex-row justify-evenly">
            

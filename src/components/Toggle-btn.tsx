@@ -1,17 +1,13 @@
-// Import necessary dependencies
-import * as React from "react"
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
-import { useTheme } from "next-themes"
+import React from "react";
+import { FiSun, FiMoon } from "react-icons/fi";
+import { useTheme } from "next-themes";
 
-// ModeToggle component
-export function ModeToggle(): JSX.Element  {
-  // Get the setTheme function from useTheme hook
-  const { theme, setTheme } = useTheme()
+export function Togglebtn(): JSX.Element {
+  const { theme, setTheme } = useTheme();
 
-  // Function to toggle theme
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <button
@@ -20,51 +16,15 @@ export function ModeToggle(): JSX.Element  {
     >
       {theme === "light" ? (
         <>
-          <SunIcon className="h-6 w-6 text-yellow-500" />
+          <FiSun className="h-6 w-6 text-yellow-500" />
           <span className="sr-only">Switch to Dark Mode</span>
         </>
       ) : (
         <>
-          <MoonIcon className="h-6 w-6 text-gray-700" />
+          <FiMoon className="h-6 w-6  dark:text-white" />
           <span className="sr-only">Switch to Light Mode</span>
         </>
       )}
     </button>
-  )
+  );
 }
-
-<!-- // Import necessary dependencies
-import * as React from "react"
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
-import { useTheme } from "next-themes"
-
-// ModeToggle component
-export function ModeToggle(): JSX.Element {
-  // Get the setTheme function from useTheme hook
-  const { theme, setTheme } = useTheme()
-
-  // Function to toggle theme
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
-
-  return (
-    <button
-      className="flex items-center gap-1 p-2 rounded-full bg-gray-200 dark:bg-gray-800"
-      onClick={toggleTheme}
-    >
-      {theme === "light" ? (
-        <>
-          <SunIcon className="h-6 w-6 text-yellow-500" />
-          <span className="sr-only">Switch to Dark Mode</span>
-        </>
-      ) : (
-        <>
-          <MoonIcon className="h-6 w-6 text-gray-700" />
-          <span className="sr-only">Switch to Light Mode</span>
-        </>
-      )}
-    </button>
-  )
-}
- -->
