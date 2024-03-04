@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import VidoeChat from "@/components/VidoeChat";
 import Conversation from "@/components/Conversation";
-
+import {Button} from "@/components/ui/button";
 const Chat: React.FC = () => {
   const [conversationVisible, setConversationVisible] = useState(false);
 
@@ -10,15 +10,17 @@ const Chat: React.FC = () => {
   };
 
   return (
-    <div className="flex w-full h-full items-center justify-center">
-      <div className="relative top-20">
+    <div className="flex  flex-col w-full h-full items-center justify-center">
+      <div className="relative top-20  flex justify-center items-center p-5">
         <VidoeChat />
-        <button onClick={toggleConversation} style={{ display: conversationVisible ? 'none' : 'block' }}>
+        <div>
+        <Button variant={"outline"}  onClick={toggleConversation} style={{ display: conversationVisible ? 'none' : 'block' }}>
           Show Conversation
-        </button>
+        </Button>
         {conversationVisible && (
           <Conversation onClose={toggleConversation} />
         )}
+        </div>
       </div>
     </div>
   );
