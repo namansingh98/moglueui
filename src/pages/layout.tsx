@@ -1,5 +1,4 @@
 "use client"
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/utils/theme-provider";
@@ -12,10 +11,6 @@ const poppins = Poppins({
 });
 
 
-export const metadata: Metadata = {
-  title: "Maglu",
-  description: "App for connect stranger through Video / Chat",
-};
 
 export default function RootLayout({
   children,
